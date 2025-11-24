@@ -7,7 +7,10 @@ const { DATABASE_HOST, DATABASE_NAME, DATABASE_USER, DATABASE_PASSWORD } = proce
 const app = express()
 const port = 3000
 
-app.use(cors())
+app.use(cors({
+    origin: "*"
+}))
+
 app.use(express.json())
 
 const database = mysql.createPool({
